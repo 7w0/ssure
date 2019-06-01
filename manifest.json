@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "ssure",
+    "version": "1.0",
+    "description": "Style stuff using regular expressions.",
+    "applications": {
+        "gecko": {
+            "id": "ssure@half_edge.addons.mozilla.org"
+        }
+    },
+    "icons": {
+        "48": "browser/a-48.png"
+    },
+    "permissions": [ "activeTab", "storage" ],
+    "background": {
+        "scripts": ["background/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content/content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": true
+    }
+}
